@@ -1,0 +1,15 @@
+<div class="navbar">
+    <div>
+      GraphQL Angular App
+    </div>
+    <nav>
+      <div>
+        <button *ngIf="!(authStateService.authState$ | async)?.isAuthenticated" (click)="login()">Login</button>
+        <button *ngIf="(authStateService.authState$ | async)?.isAuthenticated" (click)="logout()">Logout</button>
+      </div>
+      <ul>
+        <li><a routerLink="/">Home</a></li>
+        <li><a routerLink="/browse">Browse</a></li>
+      </ul>
+    </nav>
+  </div>
